@@ -21,7 +21,7 @@ const optionsSchema = z.object({
 	hoverPrefix: z.string().default("lottie-hover-"),
 });
 
-export type LottiePlayerProps = Omit<z.infer<typeof optionsSchema>, "src"> &
+export type LottiePlayerProps = Omit<z.infer<typeof optionsSchema>, "src" | "containerPrefix" | "hoverPrefix"> &
 	HTMLAttributes<"canvas"> & { name: string };
 
 export const integration = defineIntegration({
