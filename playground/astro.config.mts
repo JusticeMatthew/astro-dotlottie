@@ -1,4 +1,3 @@
-import tailwind from "@astrojs/tailwind";
 import tailwindcss from "@tailwindcss/vite";
 import { createResolver } from "astro-integration-kit";
 import { hmrIntegration } from "astro-integration-kit/dev";
@@ -9,8 +8,9 @@ const { default: astroDotlottie } = await import("astro-dotlottie");
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
-		tailwind(),
-		astroDotlottie(),
+		astroDotlottie({
+      src: "assets/animations"
+    }),
 		hmrIntegration({
 			directory: createResolver(import.meta.url).resolve("../package/dist"),
 		}),

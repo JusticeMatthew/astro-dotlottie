@@ -32,7 +32,8 @@
 	},
 	"type": "module",
 	"peerDependencies": {
-		"astro": "^5.0.0"
+		"astro": "^5.0.0",
+    "@lottiefiles/dotlottie-web": "^0.37.0"
 	},
 	"dependencies": {
 		"astro-integration-kit": "^0.18.0"

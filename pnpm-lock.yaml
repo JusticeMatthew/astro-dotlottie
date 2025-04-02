@@ -17,6 +17,9 @@ importers:
 
   package:
     dependencies:
+      '@lottiefiles/dotlottie-web':
+        specifier: ^0.37.0
+        version: 0.37.0
       astro:
         specifier: ^5.0.0
         version: 5.5.6(@types/node@22.13.17)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.38.0)(typescript@5.8.2)(yaml@2.7.1)
@@ -525,6 +528,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@lottiefiles/dotlottie-web@0.37.0':
+    resolution: {integrity: sha512-dCtQkYlq9GDswJNmcIlUaAskxrsJ56SRhY8woNsHuIPWy+tfP9tgf1fA9fZ1Oj72DVdyYkK0DxLk58HhBrmpBQ==}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -2941,6 +2947,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@lottiefiles/dotlottie-web@0.37.0': {}
 
   '@manypkg/find-root@1.1.0':
     dependencies:
