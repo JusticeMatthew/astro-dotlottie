@@ -3,14 +3,14 @@ import type { LottiePlayerProps } from "../integration.ts";
 import { toKebabCase } from "../utils.ts";
 
 const {
-  name,
-  autoplay = true,
-  loop = true,
-  useHoverControls = false,
-  id,
-  width = 100,
-  height = 100,
-  ...attrs
+	name,
+	autoplay = true,
+	loop = true,
+	useHoverControls = false,
+	id,
+	width = 100,
+	height = 100,
+	...attrs
 } = Astro.props as LottiePlayerProps;
 
 const animationName = toKebabCase(name);

@@ -9,8 +9,8 @@ const { default: astroDotlottie } = await import("astro-dotlottie");
 export default defineConfig({
 	integrations: [
 		astroDotlottie({
-      src: "assets/animations"
-    }),
+			src: "assets/animations",
+		}),
 		hmrIntegration({
 			directory: createResolver(import.meta.url).resolve("../package/dist"),
 		}),

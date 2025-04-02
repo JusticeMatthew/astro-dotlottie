@@ -8,12 +8,7 @@
 		"url": "https://majicwebdesign.com"
 	},
 	"license": "MIT",
-	"keywords": [
-		"astro-integration",
-		"astro-component",
-		"withastro",
-		"astro"
-	],
+	"keywords": ["astro-integration", "astro-component", "withastro", "astro"],
 	"homepage": "",
 	"publishConfig": {
 		"access": "public"
@@ -33,7 +28,7 @@
 	"type": "module",
 	"peerDependencies": {
 		"astro": "^5.0.0",
-    "@lottiefiles/dotlottie-web": "^0.37.0"
+		"@lottiefiles/dotlottie-web": "^0.37.0"
 	},
 	"dependencies": {
 		"astro-integration-kit": "^0.18.0"

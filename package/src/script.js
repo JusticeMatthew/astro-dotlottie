@@ -1,13 +1,13 @@
 export function getLottieScript(options = {}) {
-  const {
-    autoplay = true,
-    loop = true,
-    useHoverControls = false,
-    containerPrefix = 'lottie-container-',
-    hoverPrefix = 'lottie-hover-'
-  } = options;
+	const {
+		autoplay = true,
+		loop = true,
+		useHoverControls = false,
+		containerPrefix = "lottie-container-",
+		hoverPrefix = "lottie-hover-",
+	} = options;
 
-  return `
+	return `
 (function() {
   // Prevent multiple initializations
   if (window.dotLottieInitialized) return;
