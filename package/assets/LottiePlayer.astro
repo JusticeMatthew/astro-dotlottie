@@ -1,6 +1,19 @@
 ---
-import type { LottiePlayerProps } from "../integration.ts";
-import { toKebabCase } from "../utils.ts";
+import type { HTMLAttributes } from "astro/types";
+
+export interface LottiePlayerProps extends HTMLAttributes<"canvas"> {
+	name: string;
+	autoplay?: boolean;
+	loop?: boolean;
+	useHoverControls?: boolean;
+}
+
+const toKebabCase = (str: string): string => {
+	return str
+		.replace(/([a-z])([A-Z])/g, "$1-$2")
+		.replace(/[\s_]+/g, "-")
+		.toLowerCase();
+};
 
 const {
 	name,

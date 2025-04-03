@@ -2,15 +2,16 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { AstroIntegration } from "astro";
-import {
-	addVirtualImports,
-	createResolver,
-	defineIntegration,
-} from "astro-integration-kit";
-import type { HTMLAttributes } from "astro/types";
+import { defineIntegration } from "astro-integration-kit";
 import { z } from "astro/zod";
 import { getLottieScript } from "./script.js";
-import { toKebabCase } from "./utils.ts";
+
+const toKebabCase = (str: string): string => {
+	return str
+		.replace(/([a-z])([A-Z])/g, "$1-$2")
+		.replace(/[\s_]+/g, "-")
+		.toLowerCase();
+};
 
 const optionsSchema = z.object({
 	src: z.string(),
@@ -21,28 +22,18 @@ const optionsSchema = z.object({
 	hoverPrefix: z.string().default("lottie-hover-"),
 });
 
-export type LottiePlayerProps = Omit<z.infer<typeof optionsSchema>, "src" | "containerPrefix" | "hoverPrefix"> &
-	HTMLAttributes<"canvas"> & { name: string };
-
 export const integration = defineIntegration({
 	name: "astro-dotlottie",
 	optionsSchema,
 	setup({ options, name }): AstroIntegration {
 		let rootDir: URL | undefined;
 		const scriptContent = getLottieScript(options);
-		const { resolve } = createResolver(import.meta.url);
 
 		return {
 			name,
 			hooks: {
 				"astro:config:setup": (params) => {
 					params.injectScript("page", scriptContent);
-					addVirtualImports(params, {
-						name,
-						imports: {
-							"astro-dotlottie/player": `export { default as LottiePlayer } from "${resolve("./components/LottiePlayer.astro")}";`,
-						},
-					});
 				},
 				"astro:config:done": ({ config, logger }) => {
 					rootDir = config.root;
